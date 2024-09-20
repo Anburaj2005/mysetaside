@@ -124,9 +124,7 @@
 
         <section class="content pt-32 contract-content">
 
-            <div class="container-fluid border py-5 px-3  point-contact">
-             
-
+            <div class="container-fluid border bg-white py-5 point-contact">
                 <div class="row ">
                     <div class="col-12">
                         <h4 class="fw-bold">Search Federal Government Contracts</h4>
@@ -140,35 +138,44 @@
                 <div class="row">
                     <div class="col-md-6 pt-4">
                         <p>NAICS Code</p>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected="">Search by NAICS</option>
+                        <select class="form-select required select" aria-label="Default select example" id="" placeholder="Search by NAICS"  >
+                            <option value selected>Search by NAICS</option>
+                    
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
+                        <div class="text-danger errorMessage  pt-3">Please Select NAICS Code</div>
                     </div>
                     <div class="col-md-6 pt-4">
                         <p>Agency</p>
 
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected="">Search by Agency</option>
+                        <select class="form-select required select" aria-label="Default select example">
+                   
+                            <option value selected="">Search by Agency</option>
                             <option value="1"></option>
                             <option value="2"></option>
                             <option value="3"></option>
                         </select>
+                        <div class="text-danger errorMessage  pt-3">Please Select Agency</div>
+
                     </div>
 
                 </div>
                 <div class="row  py-4">
                     <div class="col-md-6 pt-3">
                         <p>Solicitation ID</p>
-                        <input name="Due Date" type="text" class="form-control id-box">
+                        <input name="Due Date" type="text" class="form-control  required">
+                        <div class="text-danger errorMessage  pt-3">Please Enter Solicitation ID</div>
+
 
                     </div>
                     <div class="col-md-6 pt-3">
                         <p>Posted Date</p>
                         <input name="Posted Date" data-date-format="MM/dd/yyyy" max="2024-07-24" type="date"
-                            class="form-control calendar valid">
+                            class="form-control calendar valid required">
+                        <div class="text-danger errorMessage  pt-3">Please Enter Posted Date</div>
+
 
                         <p class="text-end pt-4"><a href=""><i class="fa-solid fa-table-columns pe-2"></i><span
                                     id="myButton">More Filters </span> </a></p>
@@ -181,164 +188,172 @@
                         <p>Due Date</p>
 
                         <input name="Due Date" data-date-format="MM/dd/yyyy" max="2024-07-24" type="date"
-                            class="form-control calendar valid">
+                            class="form-control calendar valid required">
+                        <div class="text-danger errorMessage  pt-3">Please Enter Due Date</div>
+
                     </div>
                     <div class="col-md-6 pt-4 pt-md-0">
                         <p>Posting Type</p>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected="">Posting Type</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
+                        <select class="form-select required select" aria-label="Default select example">
+                            <option value selected>Posting Type</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
+                        <div class="text-danger errorMessage  pt-3">Please Enter Posting Type</div>
+
                     </div>
                 </div>
                 <div class="row  pt-4" id="myDiv1">
                     <div class="col-md-6">
                         <p>Full Text Keyword Search in Synopsis/Solicitation Title</p>
-
-                        <div class="input-group search-data py-2">
-
-                            <input type="text" class="form-control id-box border " placeholder="" aria-label="Username"
-                                aria-describedby="basic-addon1">
-                        </div>
-
+                        <input name="Due Date" type="text" class="form-control  required">
+                        <div class="text-danger errorMessage  pt-3">Please Enter Synopsis/Solicitation Title</div>
+                      
                     </div>
                 </div>
 
                 <div class="row pt-4">
                     <div class="col-12 text-center">
-                        <button class="search-btn px-5 py-2"> <i
+                        <button class="search-btn px-5 py-2" id="submitButton"> <i
                                 class="fa-solid fa-magnifying-glass pe-2"></i>Search</button>
                     </div>
 
                 </div>
 
-       
-        </div>
 
-            <div class="container-fluid ps-0 pt-5">
-                <div class="row">
+            </div>
+
+            <div class="container-flui pt-5">
+                <div class="row ps-0">
                     <div class="col-12">
                         <h5>Opportunity</h5>
 
                     </div>
                 </div>
             </div>
-            <div class="container-fluid px-3">
-
-                <div class="row border ">
-                    <div class=" col-lg-12 col-xl-12 col-xxl-12 py-4">
-                        <div class="row">
-                            <div class="col-10">
-                                <p class="title-color fw-bold">DEFENSE LOGISTICS AGENCY</p>
-
+            <div class="row">
+                <div class="  bg-white px-4">
+                    <div class="row border ">
+                        <div class=" col-lg-12 col-xl-12 col-xxl-12 py-4">
+                            <div class="row">
+                                <div class="col-10">
+                                    <p class="title-color fw-bold">DEFENSE LOGISTICS AGENCY</p>
+    
+                                </div>
+                                <div class="col-2 text-end">
+                                    <button class="border-0 bg-white"><i class="fa-regular fa-circle-xmark"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-2 text-end">
-                                <button class="border-0 bg-white"><i class="fa-regular fa-circle-xmark"></i>
-                                </button>
+    
+                            <div class="row py-3">
+    
+                                <div class="col-12 col-xl-4">
+                                    <p>Award Number:<span class="fw-bold"> 80MSFC24R0012</span></p>
+                                </div>
+                                <div class="col-12 col-xl-4 py-3 py-xl-0">
+                                    <p>
+                                        Solicitation ID:<span class="fw-bold"> 80MSFC24R0012</span></p>
+                                </div>
+                                <div class="col-12 col-xl-4 text-xl-end">
+                                    <p><span><i class="fa-regular fa-calendar text-danger "></i></span> Response
+                                        Due: Mar 22, 2024</p>
+                                </div>
+    
+                            </div>
+                            <div class="border-bottom">
+    
+                            </div>
+                            <div class="row py-3">
+                                <p class="fw-bold ">SYNOPSIS:</p>
+                                <p class="py-2">NASA Technical Standards System (NTSS)</p>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col-md-6 col-12 ">
+                                    <button class="save-btn px-3 py-1 me-3 "> <i class="fa-regular fa-floppy-disk pe-2"></i>
+                                        Save</button>
+                                    <button class="btn fav-btn px-3 py-1 fw-bold"><i
+                                            class="fa-solid fa-share-nodes pe-2"></i>
+                                        Share</button>
+    
+    
+                                </div>
+                                <div
+                                    class="col-md-6 col-12 pt-32 pt-md-0  d-flex align-items-end d-flex justify-content-md-end">
+                                    <p><a href=""><i class="fa-solid fa-table-columns pe-2"></i>Read full
+                                            Oportunity</a></p>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row py-3">
-
-                            <div class="col-12 col-xl-4">
-                                <p>Award Number:<span class="fw-bold"> 80MSFC24R0012</span></p>
+    
+                    </div>
+                    <div class="row border">
+                        <div class=" col-lg-12 col-xl-12 col-xxl-12   py-4">
+                            <div class="row">
+                                <div class="col-10">
+                                    <p class="title-color fw-bold">DEFENSE LOGISTICS AGENCY</p>
+    
+                                </div>
+                                <div class="col-2 text-end">
+                                    <button class="border-0 bg-white"><i class="fa-regular fa-circle-xmark"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-12 col-xl-4 py-3 py-xl-0">
-                                <p>
-                                    Solicitation ID:<span class="fw-bold"> 80MSFC24R0012</span></p>
+    
+                            <div class="row py-3">
+    
+                                <div class="col-12 col-xl-4">
+                                    <p>Award Number:<span class="fw-bold"> 80MSFC24R0012</span></p>
+                                </div>
+                                <div class="col-12 col-xl-4 py-3 py-xl-0">
+                                    <p>
+                                        Solicitation ID:<span class="fw-bold"> 80MSFC24R0012</span></p>
+                                </div>
+                                <div class="col-12 col-xl-4 text-xl-end">
+                                    <p><span><i class="fa-regular fa-calendar text-danger "></i></span> Response
+                                        Due: Mar 22, 2024</p>
+                                </div>
+    
                             </div>
-                            <div class="col-12 col-xl-4 text-xl-end">
-                                <p><span><i class="fa-regular fa-calendar text-danger "></i></span> Response
-                                    Due: Mar 22, 2024</p>
+                            <div class="border-bottom">
+    
                             </div>
-
+                            <div class="row py-3">
+                                <p class="fw-bold ">SYNOPSIS:</p>
+                                <p class="py-2">NASA Technical Standards System (NTSS)</p>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col-md-6 col-12 ">
+                                    <button class="save-btn px-3 py-1 me-3"> <i class="fa-regular fa-floppy-disk pe-2"></i>
+                                        Save</button>
+                                    <button class="btn fav-btn px-3 py-1 fw-bold"><i
+                                            class="fa-solid fa-share-nodes pe-2"></i>
+                                        Share</button>
+    
+    
+                                </div>
+    
+                                <div
+                                    class="col-md-6 col-12 pt-32 pt-md-0  d-flex align-items-end d-flex justify-content-md-end">
+                                    <p><a href=""><i class="fa-solid fa-table-columns pe-2"></i>Read full
+                                            Oportunity</a></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="border-bottom">
-
-                        </div>
-                        <div class="row py-3">
-                            <p class="fw-bold ">SYNOPSIS:</p>
-                            <p class="py-2">NASA Technical Standards System (NTSS)</p>
-                        </div>
-                        <div class="row py-3">
-                            <div class="col-md-6 col-12 ">
-                                <button class="save-btn px-3 py-1"> <i
-                                        class="fa-regular fa-floppy-disk pe-2"></i>Save</button>
-                                <button class="btn share-btn px-3 py-1 "><i
-                                        class="fa-solid fa-share-nodes pe-2"></i>Share</button>
-
-                            </div>
-                            <div
-                                class="col-md-6 col-12 pt-32 pt-md-0  d-flex align-items-end d-flex justify-content-md-end">
-                                <p><a href=""><i class="fa-solid fa-table-columns pe-2"></i>Read full
-                                        Oportunity</a></p>
-                            </div>
+    
+                    </div>
+                    <div class="row">
+                        <div class="col-12 border-top-0 border">
+                            <p class="py-3 text-center"><a href="">Show All<i class="fa-solid fa-arrow-right ps-2"></i></a>
+                            </p>
                         </div>
                     </div>
-
+    
+    
                 </div>
-                <div class="row border">
-                    <div class=" col-lg-12 col-xl-12 col-xxl-12   py-4">
-                        <div class="row">
-                            <div class="col-10">
-                                <p class="title-color fw-bold">DEFENSE LOGISTICS AGENCY</p>
-
-                            </div>
-                            <div class="col-2 text-end">
-                                <button class="border-0 bg-white"><i class="fa-regular fa-circle-xmark"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="row py-3">
-
-                            <div class="col-12 col-xl-4">
-                                <p>Award Number:<span class="fw-bold"> 80MSFC24R0012</span></p>
-                            </div>
-                            <div class="col-12 col-xl-4 py-3 py-xl-0">
-                                <p>
-                                    Solicitation ID:<span class="fw-bold"> 80MSFC24R0012</span></p>
-                            </div>
-                            <div class="col-12 col-xl-4 text-xl-end">
-                                <p><span><i class="fa-regular fa-calendar text-danger "></i></span> Response
-                                    Due: Mar 22, 2024</p>
-                            </div>
-
-                        </div>
-                        <div class="border-bottom">
-
-                        </div>
-                        <div class="row py-3">
-                            <p class="fw-bold ">SYNOPSIS:</p>
-                            <p class="py-2">NASA Technical Standards System (NTSS)</p>
-                        </div>
-                        <div class="row py-3">
-                            <div class="col-md-6 col-12 ">
-                                <button class="save-btn px-3 py-1"> <i
-                                        class="fa-regular fa-floppy-disk pe-2"></i>Save</button>
-                                <button class="btn share-btn px-3 py-1 "><i
-                                        class="fa-solid fa-share-nodes pe-2"></i>Share</button>
-
-                            </div>
-                            <div
-                                class="col-md-6 col-12 pt-32 pt-md-0  d-flex align-items-end d-flex justify-content-md-end">
-                                <p><a href=""><i class="fa-solid fa-table-columns pe-2"></i>Read full
-                                        Oportunity</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-12 border-top-0 border">
-                        <p class="py-3 text-center"><a href="">Show All<i class="fa-solid fa-arrow-right ps-2"></i></a></p>
-                    </div>
-                </div>
-              
-          
             </div>
+        
         </section>
 
     </div>
@@ -389,7 +404,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <div class="auto d-flex justify-content-end">
+                    <div class="auto d-flex justify-content-lg-end">
                         <p class=""><a href="">Sitemap </a> <span class="px-md-1 px-3">|</span><a href="">Refund Policy
                             </a>
                             <span class="px-md-1 px-3">|</span>
@@ -458,5 +473,40 @@
         });
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $(".errorMessage").hide();
 
+        $("#submitButton").click(function (event) {
+            event.preventDefault();
+
+            $(".required").each(function () {
+                var inputField = $(this);
+                var errorMessage = inputField.next(".errorMessage");
+
+                if (inputField.is("select")) {
+
+                    if (inputField.prop("selectedIndex") === 0) {
+                        errorMessage.show();
+                        inputField.css("border", "0.5px solid #AF3131");
+                    } else {
+                        errorMessage.hide();
+                        inputField.css("border", "1px solid #ced4da");
+                    }
+                } else {
+
+                    if (inputField.val() == "") {
+                        errorMessage.show();
+                        inputField.css("border", "0.5px solid #AF3131");
+                    } else {
+                        errorMessage.hide();
+                        inputField.css("border", "1px solid #ced4da");
+                    }
+
+                }
+
+            });
+        });
+    });
+</script>
 </html>

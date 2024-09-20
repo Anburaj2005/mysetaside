@@ -210,13 +210,16 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
 
-                            <label for="" class="form-label fw-bold ps-0 pt-32">Select your Business Type</label>
-                            <select class="form-select " aria-label="Default select example">
-                                <option selected>Small Business</option>
-                                <option value="1">One</option>
+                            <label for="" class="form-label fw-bold ps-0 pt-32 ">Select your Business Type</label>
+
+                            <select class="form-select required" aria-label="Default select example" id="select">
+                                <option value selected>Select an option</option>
+                                <option value="1">Small Business</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
+                            <div class="text-danger errorMessage  pt-3">Please Select your Business Type</div>
+
                         </div>
                     </div>
 
@@ -237,7 +240,8 @@
                             <label for="" class="form-label fw-bold ps-0 pt-32">Last Point of Contact Name</label>
                             <input type="text" class="form-control required"
                                 placeholder="Please Enter Last Point of Contact Name" name="">
-                            <div class="text-danger errorMessage  pt-3" id="">Last Point of Contact Name</div>
+                            <div class="text-danger errorMessage  pt-3" id="">Please Enter Last Point of Contact Name
+                            </div>
 
                         </div>
                     </div>
@@ -247,7 +251,7 @@
                             <label for="" class="form-label fw-bold ps-0 pt-32">Last Point of Contact Title</label>
                             <input type="text" class="form-control required"
                                 placeholder="Please Enter Last Point of Contact Title" name="">
-                            <div class="text-danger errorMessage  pt-3">Last Point of Contact Title</div>
+                            <div class="text-danger errorMessage  pt-3">Please Enter Last Point of Contact Title</div>
 
                         </div>
                     </div>
@@ -257,7 +261,7 @@
                             <label for="" class="form-label  fw-bold ps-0 pt-32">Last Point of Contact Email</label>
                             <input type="text" class="form-control required"
                                 placeholder="Please Enter Last Point of Contact Title" name="">
-                            <div class="text-danger errorMessage  pt-3">Last Point of Contact Email</div>
+                            <div class="text-danger errorMessage  pt-3">Please Enter Last Point of Contact Email</div>
 
 
 
@@ -398,29 +402,41 @@
 
 
 </body>
+
+
+
 <script>
     $(document).ready(function () {
-
         $(".errorMessage").hide();
 
         $("#submitButton").click(function (event) {
             event.preventDefault();
 
-
             $(".required").each(function () {
                 var inputField = $(this);
                 var errorMessage = inputField.next(".errorMessage");
 
+                if (inputField.is("select")) {
 
-                if (inputField.val() == "") {
-
-                    errorMessage.show();
-                    inputField.css("border", "0.5px solid #AF3131");
+                    if (inputField.prop("selectedIndex") === 0) {
+                        errorMessage.show();
+                        inputField.css("border", "0.5px solid #AF3131");
+                    } else {
+                        errorMessage.hide();
+                        inputField.css("border", "1px solid #ced4da");
+                    }
                 } else {
 
-                    errorMessage.hide();
-                    inputField.css("border", "1px solid #ced4da");
+                    if (inputField.val() == "") {
+                        errorMessage.show();
+                        inputField.css("border", "0.5px solid #AF3131");
+                    } else {
+                        errorMessage.hide();
+                        inputField.css("border", "1px solid #ced4da");
+                    }
+
                 }
+
             });
         });
     });

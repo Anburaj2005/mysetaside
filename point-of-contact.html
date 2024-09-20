@@ -101,17 +101,19 @@
                     <h4 class="">Point of Contact</h4>
                     <div class="row ">
                         <div class="col-lg-12 col-md-12">
-                            <label for="" class="form-label fw-bold ps-0 pt-32"> Agency Name</label>
-                            <input type="text" class="form-control" placeholder="Please Enter Agency Name" name=""
+                            <label for="" class="form-label fw-bold ps-0 pt-64"> Agency Name</label>
+                            <input type="text" class="form-control required" placeholder="Please Enter Agency Name" name=""
                                 id="">
+                                <div class="text-danger errorMessage pt-3">Please enter Agency Name</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
     
                             <label for="" class="form-label fw-bold ps-0 pt-32"> Last Point of Contact Name</label>
-                            <input type="text" class="form-control"
+                            <input type="text" class="form-control required"
                                 placeholder="Please Enter Last Point of Contact Name" name="" id="">
+                                <div class="text-danger errorMessage pt-3">Please enter Last Point of Contact Name</div>
                         </div>
                     </div>
 
@@ -119,32 +121,36 @@
                         <div class="col-lg-12 col-md-12">
     
                             <label for="" class="form-label fw-bold ps-0 pt-32"> Last Point of Contact Title</label>
-                            <input type="text" class="form-control"
+                            <input type="text" class="form-control required"
                                 placeholder="Please Enter Last Point of Contact Title" name="" id="">
+                                <div class="text-danger errorMessage pt-3">Please enter Last Point of Contact Title</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
     
                             <label for="" class="form-label fw-bold ps-0 pt-32"> Last Point of Contact Email</label>
-                            <input type="text" class="form-control"
+                            <input type="text" class="form-control required"
                                 placeholder="Please Enter Last Point of Contact Title" name="" id="">
+                                <div class="text-danger errorMessage pt-3">Please enter Last Point of Contact Email</div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
     
-                            <label for="" class="form-label fw-bold ps-0 pt-32"> Phone</label>
-                            <input type="text" class="form-control"
+                            <label for="" class="form-label fw-bold ps-0 pt-32"> Phone Number</label>
+                            <input type="text" class="form-control required"
                                 placeholder="Please Enter Your Phone Number" name="" id="">
+                                <div class="text-danger errorMessage pt-3">Please enter Your  Phone Number</div>
+
                         </div>
                     </div>
     
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
     
-                            <p class="pt-64 text-center  "> <a href="" type="button"
+                            <p class="pt-64 text-center   " id="submitButton"> <a href="" type="button"
                                     class="btn account-btn fw-bold col-12 "> CONTINUE</a></p>
                         </div>
     
@@ -245,24 +251,33 @@
 
 
     </section>
-
     <script>
         $(document).ready(function () {
-            $("#errorMessage").hide();
+    
+            $(".errorMessage").hide();
+    
             $("#submitButton").click(function (event) {
                 event.preventDefault();
-                if ($("#").val() == "") {
-                    $("#errorMessage").show();
-                    $("#").css("border", "0.5px solid #AF3131");
-                } else {
-                    $("#errorMessage").hide();
-                    $("#").css("border", "1px solid #ced4da");
-
-                }
+    
+    
+                $(".required").each(function () {
+                    var inputField = $(this);
+                    var errorMessage = inputField.next(".errorMessage");
+    
+    
+                    if (inputField.val() == "") {
+    
+                        errorMessage.show();
+                        inputField.css("border", "0.5px solid #AF3131");
+                    } else {
+    
+                        errorMessage.hide();
+                        inputField.css("border", "1px solid #ced4da");
+                    }
+                });
             });
         });
     </script>
-
 
 </body>
 
